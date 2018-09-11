@@ -223,22 +223,26 @@ img = np.zeros((512,512,3), np.uint8)
 
 # Draw a diagonal blue line with thickness of 5 px
 img = cv2.line(img,(0,0),(511,511),(255,0,0),5)
-Drawing Rectangle
+
+*Drawing Rectangle :
 
 To draw a rectangle, you need top-left corner and bottom-right corner of rectangle. This time we will draw a green rectangle at the top-right corner of image.
 
 img = cv2.rectangle(img,(384,0),(510,128),(0,255,0),3)
-Drawing Circle
+
+*Drawing Circle : 
 
 To draw a circle, you need its center coordinates and radius. We will draw a circle inside the rectangle drawn above.
 
 img = cv2.circle(img,(447,63), 63, (0,0,255), -1)
-Drawing Ellipse
+
+*Drawing Ellipse :
 
 To draw the ellipse, we need to pass several arguments. One argument is the center location (x,y). Next argument is axes lengths (major axis length, minor axis length). angle is the angle of rotation of ellipse in anti-clockwise direction. startAngle and endAngle denotes the starting and ending of ellipse arc measured in clockwise direction from major axis. i.e. giving values 0 and 360 gives the full ellipse. For more details, check the documentation of cv2.ellipse(). Below example draws a half ellipse at the center of the image.
 
 img = cv2.ellipse(img,(256,256),(100,50),0,0,180,255,-1)
-Drawing Polygon
+
+*Drawing Polygon :
 
 To draw a polygon, first you need coordinates of vertices. Make those points into an array of shape ROWSx1x2 where ROWS are number of vertices and it should be of type int32. Here we draw a small polygon of with four vertices in yellow color.
 
@@ -251,6 +255,7 @@ If third argument is False, you will get a polylines joining all the points, not
 Note
 
 cv2.polylines() can be used to draw multiple lines. Just create a list of all the lines you want to draw and pass it to the function. All lines will be drawn individually. It is more better and faster way to draw a group of lines than calling cv2.line() for each line.
+
 Adding Text to Images:
 
 To put texts in images, you need specify following things.
